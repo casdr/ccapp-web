@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<div id="table" align="center">
+<table>
+    <tr>
+        <td valign="top">
+            <h2>Maandag</h2>
+            <span id="maandag"><i class="ion-loading-d"></i></span>
+        </td>
+        <td valign="top">
+            <h2>Dinsdag</h2>
+            <span id="dinsdag"><i class="ion-loading-d"></i></span>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <h2>Woensdag</h2>
+            <div id="woensdag"><i class="ion-loading-d"></i></div>
+        </td>
+        <td valign="top">
+            <h2>Donderdag</h2>
+            <div id="donderdag"><i class="ion-loading-d"></i></div>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td valign="top">
+            <h2>Vrijdag</h2>
+            <div id="vrijdag"><i class="ion-loading-d"></i></div>
+        </td>
+    </tr>
+</table>
+</div>
+<script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
+
+<script id="template-schedule-student" type="text/template">
+    {{#lessons}}
+        {{^del}}
+            {{start}} &middot; {{end}} &nbsp;&nbsp;&nbsp; {{lesson}} - {{room}} - {{teacher}}<br />
+        {{/del}}
+    {{/lessons}}
+</script>
+<script type="text/javascript">
+    function getSchedule(id) {
+        $.getJSON( "../experium-rest1/schedule/student/" + id + "/41", function( data ) {
+            for(i=0; i<data.days.length; i++) {
+                var thisday = data.days[i];
+                var rendered = Mustache.to_html($('#template-schedule-student').html(), thisday);
+                $('#' + thisday.name.toLowerCase()).html(rendered);
+            }
+        });
+    }
+    getSchedule(115123);
+</script>
