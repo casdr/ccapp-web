@@ -24,6 +24,15 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
             echo '</script>';
         }
         ?>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/nl_NL/sdk.js#xfbml=1&appId=574200282599595&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
     </head>
     <body>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -56,6 +65,7 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
 			<center>
 				<h2>CCWeb</h2>
 				<p>Binnenkort komen er ook apps uit! Benieuwd? Check <a href="http://ccapp.it">ccapp.it</a></p>
+        <div class="fb-like" data-href="http://facebook.com/ccappnl" data-layout="standard" data-action="like" style="color:white !important;" data-show-faces="true" data-share="true"></div>
 			</center>
 		</div>
     </body>
