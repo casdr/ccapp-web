@@ -14,7 +14,7 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
-        <script src="js/main.js?v=2"></script>
+        <script src="js/main.js?v=3"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <?php
         foreach(glob('./templates/*.php') as $f) {
@@ -68,5 +68,6 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
         <div class="fb-like" data-href="http://facebook.com/ccappnl" data-layout="standard" data-action="like" style="color:white !important;" data-show-faces="true" data-share="true"></div>
 			</center>
 		</div>
+    <noscript><p><img src="//piwik.cdrns.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>
