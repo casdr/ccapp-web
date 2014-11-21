@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['rid'])) Header("Location: ./#115123");
+if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
 ?>
 <html>
     <head>
@@ -9,6 +9,7 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
         <link href="img/app_icon.png" rel="apple-touch-icon-precomposed" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
@@ -68,6 +69,9 @@ if(isset($_GET['rid'])) Header("Location: ./#115123");
         <div class="fb-like" data-href="http://facebook.com/ccappnl" data-layout="standard" data-action="like" style="color:white !important;" data-show-faces="true" data-share="true"></div>
 			</center>
 		</div>
+    <footer>
+      <p style="text-align:center;">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
+    </footer>
     <noscript><p><img src="//piwik.cdrns.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>

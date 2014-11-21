@@ -33,7 +33,6 @@ $(document).ready(function() {
                     $('#woensdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[2]));
                     $('#donderdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[3]));
                     $('#vrijdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[4]));
-                    console.log(dow);
                     if(goToToday == true && dow > 0 && dow < 6) {
                         $('html, body').animate({
                             scrollTop: $('#' + days[dow -1]).offset().top
