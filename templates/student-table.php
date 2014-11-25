@@ -2,7 +2,7 @@
 <table class="table">
   {{#lessons}}
     {{^break}}
-      <tr{{#current}} class="warning"{{/current}}><td>{{start}} - {{end}}</td><td>{{lesson}}</td><td>{{room}}</td><td>{{teacher}}</td></tr>
+      <tr><td>{{start}} - {{end}}</td><td>{{lesson}}</td><td>{{room}}</td><td>{{teacher}}</td></tr>
     {{/break}}
     {{#break}}
       <tr class="tr-break"><td>{{start}} - {{end}}</td><td>{{lesson}}</td><td>{{room}}</td><td>{{teacher}}</td></tr>
