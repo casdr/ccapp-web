@@ -1,9 +1,11 @@
 $(document).ready(function() {
+    var currentweek;
+    var current;
     var _paq = _paq || [];
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-      var u="//piwik.cdrns.com/";
+      var u="//piwik-monitoring.cashub.ga/";
       _paq.push(['setTrackerUrl', u+'piwik.php']);
       _paq.push(['setSiteId', 1]);
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
@@ -45,7 +47,7 @@ $(document).ready(function() {
         });
     }
     $.ajax({
-        url: "https://api.ccapp.it/v1/list/weeks?callback=callback",
+        url: "https://api.ccapp.it/v1/list/weeks",
 
         // the name of the callback parameter, as specified by the YQL service
         jsonp: "callback",
@@ -56,6 +58,12 @@ $(document).ready(function() {
         // work with the response
         success: function( response ) {
             $('#weekselect').html(Mustache.render($('#template-weeks').html(), response));
+            for (index = 0; index < response.length; ++index) {
+              current = response[index];
+              if(current["current"] == true) {
+                currentweek = current["week"];
+              }
+            }
             if(window.location.hash) {
                 var id = window.location.hash;
                 if(id.indexOf('/vandaag') >= 0) var goToToday = true;
@@ -83,6 +91,7 @@ $(document).ready(function() {
         }
         var id = $('#id').val();
         window.location.hash = id.replace('#', '') + '/vandaag';
-        getSchedule(id, $('#week').val(), true);
+        console.log(currentweek);
+        getSchedule(id, currentweek, true);
     })
 });
