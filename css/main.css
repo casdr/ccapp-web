@@ -38,6 +38,9 @@ body {
 .tr-break {
 	background-color:#979797;
 }
+.tr-test {
+	background-color:#e74c3c;
+}
 #content a {
 	color:white !important;
 }

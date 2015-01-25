@@ -17,7 +17,7 @@ $(document).ready(function() {
         console.log(id);
         $('#content').html($('#template-schedule-page').html());
         $.ajax({
-            url: "https://api.ccapp.it/schedule/" + type + "/" + id + "/" + week + "",
+            url: "https://api.ccapp.it/v1/" + type + "/" + id + "/schedule/" + week + "?callback=callback",
 
             // the name of the callback parameter, as specified by the YQL service
             jsonp: "callback",
@@ -27,12 +27,12 @@ $(document).ready(function() {
 
             // work with the response
             success: function( response ) {
-                if(typeof response.days !== "undefined" && response.days) {
-                    $('#maandag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[0]));
-                    $('#dinsdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[1]));
-                    $('#woensdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[2]));
-                    $('#donderdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[3]));
-                    $('#vrijdag').html(Mustache.render($('#template-' + type + '-table').html(), response.days[4]));
+                if(typeof response[0] !== "undefined" && response[0]) {
+                    $('#maandag').html('<center><h3>Maandag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[0]));
+                    $('#dinsdag').html('<center><h3>Dinsdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[1]));
+                    $('#woensdag').html('<center><h3>Woensdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[2]));
+                    $('#donderdag').html('<center><h3>Donderdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[3]));
+                    $('#vrijdag').html('<center><h3>Vrijdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[4]));
                     if(goToToday == true && dow > 0 && dow < 6) {
                         $('html, body').animate({
                             scrollTop: $('#' + days[dow -1]).offset().top
@@ -45,7 +45,7 @@ $(document).ready(function() {
         });
     }
     $.ajax({
-        url: "https://api.ccapp.it/schedule/weeks?callback=callback",
+        url: "https://api.ccapp.it/v1/list/weeks?callback=callback",
 
         // the name of the callback parameter, as specified by the YQL service
         jsonp: "callback",
