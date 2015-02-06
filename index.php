@@ -9,14 +9,13 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
         <link href="img/app_icon.png" rel="apple-touch-icon-precomposed" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
-        <script src="js/main.js?v=6"></script>
-        <link rel="stylesheet" type="text/css" href="css/main.css?v=6">
+        <script src="js/main.js?v=7"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css?v=7">
         <?php
         foreach(glob('./templates/*.php') as $f) {
             $n = 'template-'.str_replace(array('./templates/', '.php'), '', $f);
@@ -72,6 +71,5 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
     <footer>
       <p style="text-align:center;">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
     </footer>
-    <noscript><p><img src="//piwik.cdrns.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     </body>
 </html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>CCWeb</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="img/app_icon.png" rel="apple-touch-icon" />
+    <link href="img/app_icon.png" rel="apple-touch-icon-precomposed" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=7">
+    <script type="text/template" id="template-grades">
+        <div class="panel-group" id="accordion">
+        {{#classes}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{text}}">{{title}}</a>
+                    </h4>
+                </div>
+                <div id="collapse{{text}}" class="panel-collapse collapse in">
+                    <ul class="list-group">
+                        {{#grades}}
+                        <li class="list-group-item"><font color="black">{{beschrijving}} &middot; <b>{{cijfer}}</b></font></li>
+                        {{/grades}}
+                    </ul>
+                </div>
+            </div>
+        {{/classes}}
+        </div>
+    </script>
+
+</head>
+<body>
+<div class="container">
+
+</div>
+<script>
+    $.post( "../hudson/v1/student/*llid*/grades/2", { password: "*passwd*" }, function( data ) {
+        $('.container').html(Mustache.render($('#template-grades').html(), data));
+    }, "json");
+</script>
+</body>
