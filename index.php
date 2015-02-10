@@ -14,8 +14,8 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
-        <script src="js/main.js?v=7"></script>
-        <link rel="stylesheet" type="text/css" href="css/main.css?v=7">
+        <script src="js/main.js?v=8"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css?v=8">
         <?php
         foreach(glob('./templates/*.php') as $f) {
             $n = 'template-'.str_replace(array('./templates/', '.php'), '', $f);
@@ -69,7 +69,7 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
 			</center>
 		</div>
     <footer>
-      <p style="text-align:center;">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
+      <p id="na">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
     </footer>
     </body>
 </html>
