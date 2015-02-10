@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var currentweek;
     var current;
+    var _paq = _paq || [];
     _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
     _paq.push(["setCookieDomain", "*.ccweb.nl"]);
     _paq.push(["trackPageView"]);
