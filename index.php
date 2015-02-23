@@ -71,5 +71,6 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
     <footer>
       <p id="na">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
     </footer>
+    <script type="text/javascript" id="cookiebanner" src="http://cookiebanner.eu/js/cookiebanner.min.js"></script>
     </body>
 </html>
