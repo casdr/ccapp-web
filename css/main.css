@@ -24,6 +24,7 @@ body {
 }
 
 .navbar {
+    background-color:#267BAF;
 	    /* IE 8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=79)";
     /* IE 5-7 */
