@@ -24,10 +24,12 @@ body {
 
 .navbar {
 	background:rgba(38, 123, 175, 0.79);
+	border:none;
 }
 
 .navbar-brand {
 	color:white !important;
+	border:none;
 }
 
 .table .progress { 
