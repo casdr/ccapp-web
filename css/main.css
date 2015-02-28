@@ -21,7 +21,14 @@ body {
 	height:43px;
 	background-color:#267BAF;
 	border:0px;
-    /* IE 8 */
+}
+
+.navbar-brand {
+	color:white !important;
+}
+.navbar > div form {
+	background-color:#267BAF;
+	    /* IE 8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=79)";
     /* IE 5-7 */
     filter: alpha(opacity=79);
@@ -31,13 +38,6 @@ body {
     -khtml-opacity: 0.79;
     /* Good browsers */
     opacity: 0.79;
-}
-
-.navbar-brand {
-	color:white !important;
-}
-.navbar > div form {
-	background-color:#267BAF;
 }
 .table .progress { 
     margin-bottom: 0px; 
