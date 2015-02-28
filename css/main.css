@@ -14,27 +14,13 @@ body {
     color:white;
 }
 
-.navbar > *100% {
+.navbar {
 	top:0;
 	left:0;
 	width:100%;
 	height:43px;
-	background-color:#267BAF;
 	border:0px;
-}
-
-.navbar {
-    background-color:#267BAF;
-	    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=79)";
-    /* IE 5-7 */
-    filter: alpha(opacity=79);
-    /* Netscape */
-    -moz-opacity: 0.79;
-    /* Safari 1.x */
-    -khtml-opacity: 0.79;
-    /* Good browsers */
-    opacity: 0.79;
+	background:rgba(38, 123, 175, 0.79);
 }
 
 .navbar-brand {
@@ -46,10 +32,7 @@ body {
 .table .progress { 
     margin-bottom: 0px; 
 }
-.navbar-form {
-	background-color:black;
-	opacity: 1.0 !important;
-}
+
 .tr-break {
 	background-color:#979797;
 }
