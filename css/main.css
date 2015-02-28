@@ -29,9 +29,7 @@ body {
 .navbar-brand {
 	color:white !important;
 }
-.navbar > div form {
-	background-color:#267BAF;
-}
+
 .table .progress { 
     margin-bottom: 0px; 
 }
