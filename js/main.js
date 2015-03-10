@@ -62,7 +62,7 @@ $(document).ready(function() {
         success: function( response ) {
             $('#weekselect').html(Mustache.render($('#template-weeks').html(), response));
             for (index = 0; index < response.length; ++index) {
-              current = response.lessons[index];
+              current = response[index];
               if(current["current"] == true) {
                 currentweek = current["week"];
               }
