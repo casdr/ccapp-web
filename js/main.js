@@ -32,12 +32,12 @@ $(document).ready(function() {
 
             // work with the response
             success: function( response ) {
-                if(typeof response[0] !== "undefined" && response[0]) {
-                    $('#maandag').html('<center><h3>Maandag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[0]));
-                    $('#dinsdag').html('<center><h3>Dinsdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[1]));
-                    $('#woensdag').html('<center><h3>Woensdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[2]));
-                    $('#donderdag').html('<center><h3>Donderdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[3]));
-                    $('#vrijdag').html('<center><h3>Vrijdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response[4]));
+                if(typeof response.lessons[0] !== "undefined" && response.lessons[0]) {
+                    $('#maandag').html('<center><h3>Maandag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response.lessons[0]));
+                    $('#dinsdag').html('<center><h3>Dinsdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response.lessons[1]));
+                    $('#woensdag').html('<center><h3>Woensdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response.lessons[2]));
+                    $('#donderdag').html('<center><h3>Donderdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response.lessons[3]));
+                    $('#vrijdag').html('<center><h3>Vrijdag</h3></center>' + Mustache.render($('#template-' + type + '-table').html(), response.lessons[4]));
                     if(goToToday == true && dow > 0 && dow < 6) {
                         $('html, body').animate({
                             scrollTop: $('#' + days[dow -1]).offset().top
@@ -62,7 +62,7 @@ $(document).ready(function() {
         success: function( response ) {
             $('#weekselect').html(Mustache.render($('#template-weeks').html(), response));
             for (index = 0; index < response.length; ++index) {
-              current = response[index];
+              current = response.lessons[index];
               if(current["current"] == true) {
                 currentweek = current["week"];
               }
