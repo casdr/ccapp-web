@@ -72,6 +72,7 @@ $(document).ready(function() {
                 if(id.indexOf('/vandaag') >= 0) var goToToday = true;
                 else var goToToday = false;
                 var cid = id.replace('#', '');
+                $('#id').val(cid);
                 cid = cid.replace('/vandaag', '');
                 getSchedule(cid, $('#week').val(), goToToday);
             }
