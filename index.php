@@ -63,6 +63,9 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
 		</nav>
 		<div class="container-fluid" id="content">
 			<center>
+			    <h2>Voor de mensen uit VWO5!</h2>
+                <p>hierbij de <a href="https://www.dropbox.com/s/quwhdzxebd1vtnb/renaissance.ppt?dl=0">link</a> naar de powerpoint over de bouwkunst uit de renaissance.</p>
+                <br>
 				<h2>CCWeb</h2>
 				<p>Binnenkort komen er ook apps uit! Benieuwd? Check <a href="http://ccapp.it">ccapp.it</a></p>
         <div class="fb-like" data-href="http://facebook.com/ccappnl" data-layout="standard" data-action="like" style="color:white !important;" data-show-faces="true" data-share="true"></div>
