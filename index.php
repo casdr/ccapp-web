@@ -14,7 +14,7 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
-        <script src="js/main.js?v=12"></script>
+        <script src="js/main.js?v=13"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css?v=16">
         <?php
         foreach(glob('./templates/*.php') as $f) {
