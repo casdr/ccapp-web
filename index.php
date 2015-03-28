@@ -14,7 +14,7 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
         <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/mustache.js/0.8.1/mustache.js"></script>
-        <script src="js/main.js?v=13"></script>
+        <script src="js/main.js?v=14"></script>
         <link rel="stylesheet" type="text/css" href="css/main.css?v=16">
         <?php
         foreach(glob('./templates/*.php') as $f) {
@@ -75,5 +75,20 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
       <p id="na">CCWeb is niet aansprakelijk voor schade of letsel als gevolg van het gebruik van de service.</p>
     </footer>
     <script type="text/javascript" id="cookiebanner" src="http://cookiebanner.eu/js/cookiebanner.min.js"></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//nl.hostedpiwik.website/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 6]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//nl.hostedpiwik.website/piwik.php?idsite=6" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
     </body>
 </html>
