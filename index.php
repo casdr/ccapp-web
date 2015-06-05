@@ -87,5 +87,15 @@ if(isset($_GET['rid'])) Header("Location: ./#".$_GET['rid']);
     </script>
     <noscript><p><img src="//nl.hostedpiwik.website/piwik.php?idsite=6" style="border:0;" alt="" /></p></noscript>
     <!-- End Piwik Code -->
+    <script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:41404, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c); 
+    })(window,document);
+    </script>
     </body>
 </html>
