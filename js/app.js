@@ -95,7 +95,7 @@ app.controller('ScheduleCtrl', function ($scope, $http, $location, $rootScope) {
 		$scope.days = {
 			0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []
 		};
-		$http.get(apiUrl + '/v2/zportal/schedule/' + $scope.selectedWeek)
+		$http.get(apiUrl + '/v2/zportal/schedule/' + $scope.selectedWeek.'?token='.localStorage.getItem('ztoken'))
 		.success(function (data) {
 			$scope.lessonData = data;
 			data.sort(function(a, b) {
