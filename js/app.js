@@ -1,4 +1,4 @@
-var apiUrl = 'http://office97.inwestervoort.net/experium/hudson';
+var apiUrl = 'http://api.ccweb.nl';
 
 var app = angular.module('ccwebApp', ['ngRoute']);
 
