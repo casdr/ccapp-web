@@ -1,4 +1,4 @@
-var apiUrl = 'http://api.ccweb.nl';
+var apiUrl = 'http://api.ccapp.it';
 
 var app = angular.module('ccwebApp', ['ngRoute']);
 
