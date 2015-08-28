@@ -1,0 +1,71 @@
+body {
+	background-attachment: fixed;
+	height:100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-image: -o-linear-gradient(-45deg, #C8D38E 0%, #48ACEF 76%);
+	background-image: -moz-linear-gradient(-45deg, #C8D38E 0%, #48ACEF 76%);
+	background-image: -ms-linear-gradient(-45deg, #C8D38E 0%, #48ACEF 76%);
+	background-image: linear-gradient(-45deg, #C8D38E 0%, #48ACEF 76%);
+    padding-top: 70px;
+    color:white;
+}
+
+.navbar > 100% {
+	top:0;
+	left:0;
+	width:100%;
+	height:43px;
+	border:none;
+}
+
+.navbar {
+	background:rgba(38, 123, 175, 0.79);
+	border:none;
+}
+
+.navbar-brand {
+	color:white !important;
+	border:none;
+}
+
+.login {
+	text-align: center;
+}
+.login > form {
+	max-width: 300px;
+	margin: 0 auto;
+}
+.login > form > .form-control {
+	text-align: center;
+}
+
+.login > .alert {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.table .progress { 
+    margin-bottom: 0px; 
+}
+
+.tr-break {
+	background-color:#979797;
+}
+.tr-test {
+	background-color:#e74c3c;
+}
+#content a {
+	color:white !important;
+}
+
+#na {
+	text-align: center;
+}
+
+.table>thead>tr>td.warning, .table>tbody>tr>td.warning, .table>tfoot>tr>td.warning, .table>thead>tr>th.warning, .table>tbody>tr>th.warning, .table>tfoot>tr>th.warning, .table>thead>tr.warning>td, .table>tbody>tr.warning>td, .table>tfoot>tr.warning>td, .table>thead>tr.warning>th, .table>tbody>tr.warning>th, .table>tfoot>tr.warning>th {
+	background-color: orange !important;
+}

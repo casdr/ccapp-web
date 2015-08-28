@@ -1,0 +1,24 @@
+<div class="container-fluid">
+	<div class="login">
+		<h1>Welkom!</h1>
+		<p>
+			Welkom terug bij CCWeb. Helaas moet je sinds de migratie naar Zermelo 3 nu je app code invoeren.<br />
+			Weet je niet hoe je de app code kunt vinden? Lees dan hier onder hoe je deze kunt krijgen.
+		</p>
+		<div class="alert alert-warning" ng-if="error">
+			{{ error }}
+		</div><br />
+		<form ng-submit="doLogin()">
+			<input type="text" class="form-control" placeholder="App code" ng-model="appcode"><br />
+			<input type="submit" class="btn btn-primary" value="Login">
+		</form>
+		<h3>App code</h3>
+		<ul class="list-unstyled">
+			<li>1) Ga naar <a href="http://candea.zportal.nl">candea.zportal.nl</a> en log in met je gegevens.</li>
+			<li>2) Ga in het linker menu naar het icoontje met de pijl.</li>
+			<li>3) Klik op App koppelen</li>
+			<li>4) Kopieer de 12 cijferige code</li>
+			<li>Je hebt nu de app code</li>
+		</ul>
+	</div>
+</div>
