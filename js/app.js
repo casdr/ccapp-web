@@ -18,11 +18,45 @@ app.config(['$routeProvider',
       });
 }]);
 
-app.controller('MainCtrl', function ($scope, $http) {
+app.controller('MainCtrl', function ($scope, $http, $sce) {
+	Date.prototype.getWeek = function() {
+      var onejan = new Date(this.getFullYear(), 0, 1);
+      return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+  }
+  $scope.selectedWeek = (new Date()).getWeek();
 
+	$scope.weeks = [];
+	for(var i = 1; i < 53; i++) {
+		$scope.weeks.push(i);
+	}
+	
+
+	$scope.messages = [];
+	var messageIds = localStorage.getItem('ccweb-messages');
+	if(messageIds == null) {
+		messageIds = '[]';
+	}
+	messageIds = JSON.parse(messageIds);
+	$http.get(apiUrl + '/v2/app/message')
+	.success(function (data) {
+		data.forEach(function(element) {
+			var trusted = $sce.trustAsHtml(element.text);
+			if(typeof(messageIds[element.id]) == 'undefined' || messageIds[element.id] == false) {
+				$scope.messages.push({
+					"type": element.type,
+					"text": trusted
+				});
+			}
+			messageIds[element.id] = element.onetime;
+		});
+		localStorage.setItem('ccweb-messages', JSON.stringify(messageIds));
+	});
 });
 
-app.controller('LoginCtrl', function ($scope, $http, $location) {
+app.controller('LoginCtrl', function ($scope, $http, $location, $rootScope) {
+	$rootScope.getSchedule = function () {
+		return true;
+	}
 	$scope.error = '';
 	$scope.appcode = '';
 	$scope.doLogin = function () {
@@ -45,7 +79,7 @@ app.controller('LoginCtrl', function ($scope, $http, $location) {
 	}
 });
 
-app.controller('ScheduleCtrl', function ($scope, $http, $location) {
+app.controller('ScheduleCtrl', function ($scope, $http, $location, $rootScope) {
 	$scope.days = {
 		0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []
 	};
@@ -56,10 +90,12 @@ app.controller('ScheduleCtrl', function ($scope, $http, $location) {
 		"Donderdag": 4,
 		"Vrijdag": 5
 	};
-	if(localStorage.getItem('ztoken') == null) {
-		$location.path("/login");
-	} else {
-		$http.get(apiUrl + '/v2/zportal/schedule/36')
+	$rootScope.getSchedule = function() {
+		console.log("getting");
+		$scope.days = {
+			0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []
+		};
+		$http.get(apiUrl + '/v2/zportal/schedule/' + $scope.selectedWeek)
 		.success(function (data) {
 			$scope.lessonData = data;
 			data.sort(function(a, b) {
@@ -72,5 +108,11 @@ app.controller('ScheduleCtrl', function ($scope, $http, $location) {
 				$scope.days[day].push(element);
 			});
 		});
+	}
+
+	if(localStorage.getItem('ztoken') == null) {
+		$location.path("/login");
+	} else {
+		$scope.getSchedule();
 	}
 });
