@@ -4,15 +4,16 @@
 			<h3>Maandag</h3>
 			<table class="table">
 				<tr>
-					<th>Tijd</th><th>Lokaal</th><th>Docent</th>
+					<th>Tijd</th><th>Les</th><th>Lokaal</th><th>Docent</th>
 				</tr>
 				<tr ng-repeat="lesson in days[1]" ng-class="{
 				warning: lesson.modified,
 				danger: lesson.cancelled
 				}">
 					<td>{{ lesson.start * 1000 | date:'HH.mm' }}</td>
+					<td>{{ lesson.subjects.join(', ') }}</td>
 					<td>{{ lesson.locations.join(', ').toUpperCase() }}</td>
-					<td>{{ lesson.teachers.join(', ') }}</td>
+					<td>{{ lesson.teaOrCla.join(', ') }}</td>
 				</tr>
 			</table>
 		</div>
@@ -20,15 +21,16 @@
 			<h3>Dinsdag</h3>
 			<table class="table">
 				<tr>
-					<th>Tijd</th><th>Lokaal</th><th>Docent</th>
+					<th>Tijd</th><th>Les</th><th>Lokaal</th><th>Docent</th>
 				</tr>
 				<tr ng-repeat="lesson in days[2]" ng-class="{
 				warning: lesson.modified,
 				danger: lesson.cancelled
 				}">
 					<td>{{ lesson.start * 1000 | date:'HH.mm' }}</td>
+					<td>{{ lesson.subjects.join(', ') }}</td>
 					<td>{{ lesson.locations.join(', ').toUpperCase() }}</td>
-					<td>{{ lesson.teachers.join(', ') }}</td>
+					<td>{{ lesson.teaOrCla.join(', ') }}</td>
 				</tr>
 			</table>
 		</div>
@@ -38,15 +40,16 @@
 			<h3>Woensdag</h3>
 			<table class="table">
 				<tr>
-					<th>Tijd</th><th>Lokaal</th><th>Docent</th>
+					<th>Tijd</th><th>Les</th><th>Lokaal</th><th>Docent</th>
 				</tr>
 				<tr ng-repeat="lesson in days[3]" ng-class="{
 				warning: lesson.modified,
 				danger: lesson.cancelled
 				}">
 					<td>{{ lesson.start * 1000 | date:'HH.mm' }}</td>
+					<td>{{ lesson.subjects.join(', ') }}</td>
 					<td>{{ lesson.locations.join(', ').toUpperCase() }}</td>
-					<td>{{ lesson.teachers.join(', ') }}</td>
+					<td>{{ lesson.teaOrCla.join(', ') }}</td>
 				</tr>
 			</table>
 		</div>
@@ -54,15 +57,16 @@
 			<h3>Donderdag</h3>
 			<table class="table">
 				<tr>
-					<th>Tijd</th><th>Lokaal</th><th>Docent</th>
+					<th>Tijd</th><th>Les</th><th>Lokaal</th><th>Docent</th>
 				</tr>
 				<tr ng-repeat="lesson in days[4]" ng-class="{
 				warning: lesson.modified,
 				danger: lesson.cancelled
 				}">
 					<td>{{ lesson.start * 1000 | date:'HH.mm' }}</td>
+					<td>{{ lesson.subjects.join(', ') }}</td>
 					<td>{{ lesson.locations.join(', ').toUpperCase() }}</td>
-					<td>{{ lesson.teachers.join(', ') }}</td>
+					<td>{{ lesson.teaOrCla.join(', ') }}</td>
 				</tr>
 			</table>
 		</div>
@@ -72,15 +76,16 @@
 			<h3>Vrijdag</h3>
 			<table class="table">
 				<tr>
-					<th>Tijd</th><th>Lokaal</th><th>Docent</th>
+					<th>Tijd</th><th>Les</th><th>Lokaal</th><th>Docent</th>
 				</tr>
 				<tr ng-repeat="lesson in days[5]" ng-class="{
 				warning: lesson.modified,
 				danger: lesson.cancelled
 				}">
 					<td>{{ lesson.start * 1000 | date:'HH.mm' }}</td>
+					<td>{{ lesson.subjects.join(', ') }}</td>
 					<td>{{ lesson.locations.join(', ').toUpperCase() }}</td>
-					<td>{{ lesson.teachers.join(', ') }}</td>
+					<td>{{ lesson.teaOrCla.join(', ') }}</td>
 				</tr>
 			</table>
 		</div>

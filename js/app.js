@@ -98,6 +98,7 @@ app.controller('ScheduleCtrl', function ($scope, $http, $location, $rootScope) {
 		$http.get(apiUrl + '/v2/zportal/schedule/' + $scope.selectedWeek + '?token=' + localStorage.getItem('ztoken'))
 		.success(function (data) {
 			$scope.lessonData = data;
+			console.log(data);
 			data.sort(function(a, b) {
 				return a['start'] - b['start'];
 			});
@@ -105,6 +106,7 @@ app.controller('ScheduleCtrl', function ($scope, $http, $location, $rootScope) {
 				var date = new Date(element.start * 1000);
 				var day = date.getDay();
 				if(element.cancelled || element.hidden) return;
+				element.teaOrCla = element.teachers;
 				$scope.days[day].push(element);
 			});
 		});
